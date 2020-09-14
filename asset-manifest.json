@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/color-pallete-generator/static/css/main.5f361e03.chunk.css",
+    "main.js": "/color-pallete-generator/static/js/main.63a773c1.chunk.js",
+    "main.js.map": "/color-pallete-generator/static/js/main.63a773c1.chunk.js.map",
+    "runtime-main.js": "/color-pallete-generator/static/js/runtime-main.5bae4cbb.js",
+    "runtime-main.js.map": "/color-pallete-generator/static/js/runtime-main.5bae4cbb.js.map",
+    "static/js/2.dc57017a.chunk.js": "/color-pallete-generator/static/js/2.dc57017a.chunk.js",
+    "static/js/2.dc57017a.chunk.js.map": "/color-pallete-generator/static/js/2.dc57017a.chunk.js.map",
+    "index.html": "/color-pallete-generator/index.html",
+    "precache-manifest.d302ad7dd03d0fed244f0b94371dcc2b.js": "/color-pallete-generator/precache-manifest.d302ad7dd03d0fed244f0b94371dcc2b.js",
+    "service-worker.js": "/color-pallete-generator/service-worker.js",
+    "static/css/main.5f361e03.chunk.css.map": "/color-pallete-generator/static/css/main.5f361e03.chunk.css.map",
+    "static/js/2.dc57017a.chunk.js.LICENSE.txt": "/color-pallete-generator/static/js/2.dc57017a.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5bae4cbb.js",
+    "static/js/2.dc57017a.chunk.js",
+    "static/css/main.5f361e03.chunk.css",
+    "static/js/main.63a773c1.chunk.js"
+  ]
+}
