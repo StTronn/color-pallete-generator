@@ -8,10 +8,10 @@ const ColorBox = styled.div`
 `;
 
 const Cointainer = styled.div`
-  width: 80vw;
+  width: 20vw;
   display: grid;
-  column-gap: 40px;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  row-gap: 20px;
+  grid-template-row: repeat(auto-fill, minmax(100px, 1fr));
 `;
 
 const Pallete = ({ colors }) => {

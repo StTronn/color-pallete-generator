@@ -1,29 +1,43 @@
 import React, { useState, useRef, useEffect } from "react";
+import styled from "styled-components";
 import kMeans from "./utils/clustering";
 import Pallete from "./components/Pallete";
 import { meanPoint } from "./utils/stats-utils";
 import "./App.css";
 
+const Cointainer = styled.div`
+  display: grid;
+  width: 100vw;
+  justify-items: center;
+  grid-template-columns: 8fr 2fr;
+  min-width: 600px;
+`;
+
 function App() {
   const [colors, setColors] = useState(null);
   const canvasRef = useRef(null);
-  let ctx;
-  let canvas;
+  const contextRef = useRef(null);
   useEffect(() => {
-    canvas = canvasRef.current;
-    ctx = canvas.getContext("2d");
+    const canvas = canvasRef.current;
+    contextRef.current = canvas.getContext("2d");
+
+    const ctx = contextRef.current;
     //Our first draw
     ctx.fillStyle = "#000000";
     ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
   }, []);
 
   const loadImage = (e) => {
+    const canvas = canvasRef.current;
+    const ctx = contextRef.current;
     const reader = new FileReader();
     reader.onload = function (event) {
       const img = new Image();
       img.src = event.target.result;
       img.onload = function () {
-        canvas.width = 600;
+        const aspectRatio = img.height / img.width;
+        canvas.width = 400;
+        canvas.height = aspectRatio * canvas.width;
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
         const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
@@ -38,15 +52,19 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div>
+      <Cointainer>
+        <canvas ref={canvasRef} width={100} height={200} />
+
+        {colors && <Pallete colors={colors} />}
+        {!colors && <div> hello</div>}
+      </Cointainer>
       <input
         type="file"
         onChange={(e) => {
           loadImage(e);
         }}
       />
-      {colors && <Pallete colors={colors} />}
-      <canvas ref={canvasRef} width={100} height={200} />
     </div>
   );
 }
