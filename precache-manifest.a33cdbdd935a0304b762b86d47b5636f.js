@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "afed3ff070081b381ba410cbbeabccd5",
+    "revision": "2bc62ea8f59b6f308cd6fb245f6f9771",
     "url": "/color-pallete-generator/index.html"
   },
   {
-    "revision": "e433eecfb06cc1e55a66",
+    "revision": "46ffead0f23ff2e88d0e",
     "url": "/color-pallete-generator/static/css/main.5f361e03.chunk.css"
   },
   {
-    "revision": "56ae6b12f506fbac8438",
-    "url": "/color-pallete-generator/static/js/2.dc57017a.chunk.js"
+    "revision": "30cb59a4aed6e3bd4357",
+    "url": "/color-pallete-generator/static/js/2.22bc593a.chunk.js"
   },
   {
     "revision": "c64c486544348f10a6d6c716950bc223",
-    "url": "/color-pallete-generator/static/js/2.dc57017a.chunk.js.LICENSE.txt"
+    "url": "/color-pallete-generator/static/js/2.22bc593a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e433eecfb06cc1e55a66",
-    "url": "/color-pallete-generator/static/js/main.63a773c1.chunk.js"
+    "revision": "46ffead0f23ff2e88d0e",
+    "url": "/color-pallete-generator/static/js/main.8942eb48.chunk.js"
   },
   {
     "revision": "a7b241d84f242b594be6",
