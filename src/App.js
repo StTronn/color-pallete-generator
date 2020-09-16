@@ -7,6 +7,11 @@ import Pic from "./pic1.png";
 import { meanPoint } from "./utils/stats-utils";
 import "./App.css";
 
+const Holder = styled.div`
+  display: grid;
+  height: 80vh;
+`;
+
 const Cointainer = styled.div`
   display: grid;
   width: 100vw;
@@ -17,8 +22,8 @@ const Cointainer = styled.div`
         row-gap:100px;
         grid-template-columns:1fr;
   }
-}
-`;
+}`;
+//`
 
 function App() {
   const [colors, setColors] = useState([
@@ -45,6 +50,9 @@ function App() {
     const canvas = canvasRef.current;
     const ctx = contextRef.current;
     const reader = new FileReader();
+    setColors([]);
+
+    setUploadedOnce(true);
     reader.onload = function (event) {
       const img = new Image();
       img.src = event.target.result;
@@ -60,20 +68,27 @@ function App() {
           colors.push([data[i], data[i + 1], data[i + 2], data[i + 3]]);
         }
         setColors(generatePallete(colors, 4));
-        setUploadedOnce(true);
       };
     };
     reader.readAsDataURL(e.target.files[0]);
   };
 
   const width = Math.max(window.innerWidth * 0.4, 600);
-  //const display = uploadedOnce ? "block" : "none";
+  const display = uploadedOnce ? "block" : "none";
   return (
     <div>
       <Cointainer className="py-12 md:px-4 sm:px-6 lg:py-16 lg:px-8 ">
-        <Info inputRef={inputRef} />
+        <Holder>
+          <Info inputRef={inputRef} />
+        </Holder>
         <div className="text-center">
-          <canvas ref={canvasRef} width={width} height={200} />
+          <canvas
+            style={{ display: display }}
+            ref={canvasRef}
+            width={width}
+            height={200}
+          />
+          {!uploadedOnce && <img alt="pic" src={Pic} width={width} />}
           {colors && <Pallete colors={colors} />}
 
           <input
