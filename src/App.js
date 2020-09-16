@@ -3,17 +3,16 @@ import styled from "styled-components";
 import kMeans from "./utils/clustering";
 import Pallete from "./components/Pallete";
 import Info from "./components/Info";
+import Pic from "./pic1.png";
 import { meanPoint } from "./utils/stats-utils";
 import "./App.css";
 
 const Cointainer = styled.div`
   display: grid;
   width: 100vw;
-  height: 80vh;
-  max-height: 80vw;
   grid-template-columns: 1fr 1fr;
   justify-items: center;
-    @media (max-width: 700px) {
+    @media (max-width: 1100px) {
         height:auto;
         row-gap:100px;
         grid-template-columns:1fr;
@@ -22,8 +21,13 @@ const Cointainer = styled.div`
 `;
 
 function App() {
-  const [colors, setColors] = useState(null);
-  const [loadingImage, setLoadingImage] = useState(null);
+  const [colors, setColors] = useState([
+    "#475e78",
+    "#b7aeae",
+    "#2c2832",
+    "#a44646",
+  ]);
+  const [uploadedOnce, setUploadedOnce] = useState(false);
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
   const inputRef = useRef(null);
@@ -56,19 +60,20 @@ function App() {
           colors.push([data[i], data[i + 1], data[i + 2], data[i + 3]]);
         }
         setColors(generatePallete(colors, 4));
+        setUploadedOnce(true);
       };
     };
-    if (e) reader.readAsDataURL(e.target.files[0]);
+    reader.readAsDataURL(e.target.files[0]);
   };
 
   const width = Math.max(window.innerWidth * 0.4, 600);
+  //const display = uploadedOnce ? "block" : "none";
   return (
     <div>
       <Cointainer className="py-12 md:px-4 sm:px-6 lg:py-16 lg:px-8 ">
         <Info inputRef={inputRef} />
         <div className="text-center">
           <canvas ref={canvasRef} width={width} height={200} />
-
           {colors && <Pallete colors={colors} />}
 
           <input

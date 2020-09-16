@@ -122,7 +122,7 @@ function kMeans(data, k) {
   var clusters;
   var oldClusters;
   var converged = false;
-  const iterationLimit = 500;
+  const iterationLimit = 50;
   var iterations = 0;
 
   // STEP ONE: Initialise centroids
