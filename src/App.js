@@ -2,28 +2,38 @@ import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import kMeans from "./utils/clustering";
 import Pallete from "./components/Pallete";
+import Info from "./components/Info";
 import { meanPoint } from "./utils/stats-utils";
 import "./App.css";
 
 const Cointainer = styled.div`
   display: grid;
   width: 100vw;
+  height: 80vh;
+  max-height: 80vw;
+  grid-template-columns: 1fr 1fr;
   justify-items: center;
-  grid-template-columns: 8fr 2fr;
-  min-width: 600px;
+    @media (max-width: 700px) {
+        height:auto;
+        row-gap:100px;
+        grid-template-columns:1fr;
+  }
+}
 `;
 
 function App() {
   const [colors, setColors] = useState(null);
+  const [loadingImage, setLoadingImage] = useState(null);
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
+  const inputRef = useRef(null);
   useEffect(() => {
     const canvas = canvasRef.current;
     contextRef.current = canvas.getContext("2d");
 
     const ctx = contextRef.current;
     //Our first draw
-    ctx.fillStyle = "#000000";
+    ctx.fillStyle = "#ffffff";
     ctx.fillRect(0, 0, ctx.canvas.width, ctx.canvas.height);
   }, []);
 
@@ -36,7 +46,7 @@ function App() {
       img.src = event.target.result;
       img.onload = function () {
         const aspectRatio = img.height / img.width;
-        canvas.width = 400;
+        canvas.width = Math.max(window.innerWidth * 0.4, 600);
         canvas.height = aspectRatio * canvas.width;
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
 
@@ -48,23 +58,29 @@ function App() {
         setColors(generatePallete(colors, 4));
       };
     };
-    reader.readAsDataURL(e.target.files[0]);
+    if (e) reader.readAsDataURL(e.target.files[0]);
   };
 
+  const width = Math.max(window.innerWidth * 0.4, 600);
   return (
     <div>
-      <Cointainer>
-        <canvas ref={canvasRef} width={100} height={200} />
+      <Cointainer className="py-12 md:px-4 sm:px-6 lg:py-16 lg:px-8 ">
+        <Info inputRef={inputRef} />
+        <div className="text-center">
+          <canvas ref={canvasRef} width={width} height={200} />
 
-        {colors && <Pallete colors={colors} />}
-        {!colors && <div> hello</div>}
+          {colors && <Pallete colors={colors} />}
+
+          <input
+            style={{ display: "none" }}
+            type="file"
+            ref={inputRef}
+            onChange={(e) => {
+              loadImage(e);
+            }}
+          />
+        </div>
       </Cointainer>
-      <input
-        type="file"
-        onChange={(e) => {
-          loadImage(e);
-        }}
-      />
     </div>
   );
 }
