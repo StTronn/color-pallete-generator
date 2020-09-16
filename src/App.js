@@ -50,7 +50,7 @@ function App() {
     const canvas = canvasRef.current;
     const ctx = contextRef.current;
     const reader = new FileReader();
-    setColors([]);
+    if (!uploadedOnce) setColors([]);
 
     setUploadedOnce(true);
     reader.onload = function (event) {
