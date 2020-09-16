@@ -10,6 +10,10 @@ import "./App.css";
 const Holder = styled.div`
   display: grid;
   height: 80vh;
+
+  @media (max-width: 1100px) {
+    height: auto;
+  }
 `;
 
 const Cointainer = styled.div`
@@ -19,7 +23,7 @@ const Cointainer = styled.div`
   justify-items: center;
     @media (max-width: 1100px) {
         height:auto;
-        row-gap:100px;
+        row-gap:50px;
         grid-template-columns:1fr;
   }
 }`;
