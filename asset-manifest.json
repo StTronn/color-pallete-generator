@@ -1,23 +1,26 @@
 {
   "files": {
     "main.css": "/color-pallete-generator/static/css/main.aaf60b51.chunk.css",
-    "main.js": "/color-pallete-generator/static/js/main.f9f89c7a.chunk.js",
-    "main.js.map": "/color-pallete-generator/static/js/main.f9f89c7a.chunk.js.map",
+    "main.js": "/color-pallete-generator/static/js/main.12b41bd7.chunk.js",
+    "main.js.map": "/color-pallete-generator/static/js/main.12b41bd7.chunk.js.map",
     "runtime-main.js": "/color-pallete-generator/static/js/runtime-main.5bae4cbb.js",
     "runtime-main.js.map": "/color-pallete-generator/static/js/runtime-main.5bae4cbb.js.map",
-    "static/js/2.fa7a4768.chunk.js": "/color-pallete-generator/static/js/2.fa7a4768.chunk.js",
-    "static/js/2.fa7a4768.chunk.js.map": "/color-pallete-generator/static/js/2.fa7a4768.chunk.js.map",
+    "static/css/2.d97600f8.chunk.css": "/color-pallete-generator/static/css/2.d97600f8.chunk.css",
+    "static/js/2.dc04f527.chunk.js": "/color-pallete-generator/static/js/2.dc04f527.chunk.js",
+    "static/js/2.dc04f527.chunk.js.map": "/color-pallete-generator/static/js/2.dc04f527.chunk.js.map",
     "index.html": "/color-pallete-generator/index.html",
-    "precache-manifest.5bb01989258627191f4c6501ce5aecec.js": "/color-pallete-generator/precache-manifest.5bb01989258627191f4c6501ce5aecec.js",
+    "precache-manifest.19868bd94ae7c2a938d2bc8683221edf.js": "/color-pallete-generator/precache-manifest.19868bd94ae7c2a938d2bc8683221edf.js",
     "service-worker.js": "/color-pallete-generator/service-worker.js",
+    "static/css/2.d97600f8.chunk.css.map": "/color-pallete-generator/static/css/2.d97600f8.chunk.css.map",
     "static/css/main.aaf60b51.chunk.css.map": "/color-pallete-generator/static/css/main.aaf60b51.chunk.css.map",
-    "static/js/2.fa7a4768.chunk.js.LICENSE.txt": "/color-pallete-generator/static/js/2.fa7a4768.chunk.js.LICENSE.txt",
+    "static/js/2.dc04f527.chunk.js.LICENSE.txt": "/color-pallete-generator/static/js/2.dc04f527.chunk.js.LICENSE.txt",
     "static/media/pic1.png": "/color-pallete-generator/static/media/pic1.7e9166b7.png"
   },
   "entrypoints": [
     "static/js/runtime-main.5bae4cbb.js",
-    "static/js/2.fa7a4768.chunk.js",
+    "static/css/2.d97600f8.chunk.css",
+    "static/js/2.dc04f527.chunk.js",
     "static/css/main.aaf60b51.chunk.css",
-    "static/js/main.f9f89c7a.chunk.js"
+    "static/js/main.12b41bd7.chunk.js"
   ]
 }
