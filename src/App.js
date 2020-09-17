@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import kMeans from "./utils/clustering";
 import Pallete from "./components/Pallete";
+import Spinner from "react-spinkit";
 import Info from "./components/Info";
 import Pic from "./pic1.png";
 import { meanPoint } from "./utils/stats-utils";
@@ -10,7 +11,8 @@ import "./App.css";
 const Holder = styled.div`
   display: grid;
   height: 80vh;
-
+  align-items: center;
+  justify-items: center;
   @media (max-width: 1100px) {
     height: auto;
   }
@@ -37,6 +39,7 @@ function App() {
     "#a44646",
   ]);
   const [uploadedOnce, setUploadedOnce] = useState(false);
+  const [loading, setLoading] = useState(false);
   const canvasRef = useRef(null);
   const contextRef = useRef(null);
   const inputRef = useRef(null);
@@ -54,8 +57,8 @@ function App() {
     const canvas = canvasRef.current;
     const ctx = contextRef.current;
     const reader = new FileReader();
-    if (!uploadedOnce) setColors([]);
-
+    setColors([]);
+    setLoading(true);
     setUploadedOnce(true);
     reader.onload = function (event) {
       const img = new Image();
@@ -72,13 +75,15 @@ function App() {
           colors.push([data[i], data[i + 1], data[i + 2], data[i + 3]]);
         }
         setColors(generatePallete(colors, 4));
+        setLoading(false);
       };
     };
     reader.readAsDataURL(e.target.files[0]);
   };
 
   const width = Math.max(window.innerWidth * 0.4, 600);
-  const display = uploadedOnce ? "block" : "none";
+  let display = uploadedOnce ? "block" : "none";
+  display = loading ? "none" : display;
   return (
     <div>
       <Cointainer className="py-12 md:px-4 sm:px-6 lg:py-16 lg:px-8 ">
@@ -93,6 +98,11 @@ function App() {
             height={200}
           />
           {!uploadedOnce && <img alt="pic" src={Pic} width={width} />}
+          {loading && (
+            <Holder>
+              <Spinner name="folding-cube" color="teal" />
+            </Holder>
+          )}
           {colors && <Pallete colors={colors} />}
 
           <input
