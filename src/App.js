@@ -4,7 +4,7 @@ import kMeans from "./utils/clustering";
 import Pallete from "./components/Pallete";
 import Spinner from "react-spinkit";
 import Info from "./components/Info";
-import Pic from "./pic1.png";
+import Pic from "./pic2.jpg";
 import { meanPoint } from "./utils/stats-utils";
 import "./App.css";
 
@@ -33,10 +33,10 @@ const Cointainer = styled.div`
 
 function App() {
   const [colors, setColors] = useState([
-    "#475e78",
-    "#b7aeae",
-    "#2c2832",
-    "#a44646",
+    "#081c28",
+    "#e77978",
+    "#827a8b",
+    "#266074",
   ]);
   const [uploadedOnce, setUploadedOnce] = useState(false);
   const [loading, setLoading] = useState(false);
