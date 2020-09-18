@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d1db58d852c2a7050dcc0971eb8b56b2",
+    "revision": "db63d2443df8a121def1c85d6365d340",
     "url": "/color-pallete-generator/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/color-pallete-generator/static/css/2.d97600f8.chunk.css"
   },
   {
-    "revision": "81e5e76de656308f8235",
+    "revision": "9e9dfe014858b39b05fb",
     "url": "/color-pallete-generator/static/css/main.aaf60b51.chunk.css"
   },
   {
@@ -20,15 +20,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/color-pallete-generator/static/js/2.dc04f527.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "81e5e76de656308f8235",
-    "url": "/color-pallete-generator/static/js/main.12b41bd7.chunk.js"
+    "revision": "9e9dfe014858b39b05fb",
+    "url": "/color-pallete-generator/static/js/main.217587d3.chunk.js"
   },
   {
     "revision": "a7b241d84f242b594be6",
     "url": "/color-pallete-generator/static/js/runtime-main.5bae4cbb.js"
   },
   {
-    "revision": "7e9166b73d5bf33d9d03a9be334aac54",
-    "url": "/color-pallete-generator/static/media/pic1.7e9166b7.png"
+    "revision": "663a6e574a6845669fb417a3f02c7afb",
+    "url": "/color-pallete-generator/static/media/pic2.663a6e57.jpg"
   }
 ]);
